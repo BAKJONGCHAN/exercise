@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>보석 레이싱 x 이차함수 퀴즈</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hud">
+        <h1>💎 보석 레이싱 x 이차함수 퀴즈</h1>
+        <div class="stats">
+          <span>점수: <strong id="score">0</strong></span>
+          <span>정답: <strong id="correct-count">0</strong>/4</span>
+          <span>생명: <strong id="lives">3</strong></span>
+          <span>속도: <strong id="speed">1</strong></span>
+        </div>
+        <p class="hint">이동: ← → / 보석을 먹으면 퀴즈가 나옵니다. 4문제 정답이면 완주!</p>
+      </section>
+
+      <section class="track-wrapper">
+        <canvas id="track" width="420" height="620" aria-label="레이싱 트랙"></canvas>
+      </section>
+
+      <section id="quiz-modal" class="modal hidden" aria-live="polite">
+        <div class="modal-card">
+          <h2>이차함수 퀴즈</h2>
+          <p id="quiz-question" class="question"></p>
+          <div id="quiz-options" class="options"></div>
+          <p id="quiz-feedback" class="feedback"></p>
+          <button id="next-quiz" class="primary hidden">다음 레이스로</button>
+        </div>
+      </section>
+
+      <section id="result-board" class="result-board hidden">
+        <h2>🏁 레이스 결과 보드</h2>
+        <p id="result-summary"></p>
+        <article class="result-card">
+          <h3 id="result-title"></h3>
+          <p id="result-question"></p>
+          <p id="result-answer"></p>
+          <p id="result-explanation"></p>
+        </article>
+        <div class="pager">
+          <button id="prev-result">◀ 이전</button>
+          <span id="result-page"></span>
+          <button id="next-result">다음 ▶</button>
+        </div>
+        <button id="restart" class="primary">다시 플레이</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
